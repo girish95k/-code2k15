@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="src.com.hoho.android.usbserial.examples.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to FitTech. Before we begin, please fill out your personal details."
+        android:gravity="center_horizontal"
+        android:id="@+id/text"
+        android:layout_margin="15dp"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/h"
+        android:gravity="center_horizontal"
+        android:text="Please enter your height (cm)"
+        android:layout_below="@id/text"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/h"
+        android:id="@+id/height"
+        android:inputType="number"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please enter your weight (kg)"
+        android:layout_below="@+id/height"
+        android:id="@+id/w"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/w"
+        android:id="@+id/weight"
+        android:inputType="number"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please enter your gender (F-M)"
+        android:layout_below="@+id/weight"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:id="@+id/g"/>
+    <com.rey.material.widget.Switch
+        style="@style/Material.Widget.Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:checked="false"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/g"
+        android:layout_margin="15dp"
+        android:id="@+id/gender"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender"
+        android:text="OK"
+        android:id="@+id/ok"
+        android:onClick="ok"/>
+
+</RelativeLayout>
