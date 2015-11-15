@@ -28,6 +28,8 @@ public class PlaySound extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_sound);
+
+        setTitle("Setting up...");
     }
 
     @Override

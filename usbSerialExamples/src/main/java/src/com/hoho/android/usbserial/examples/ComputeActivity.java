@@ -19,6 +19,13 @@ import java.util.regex.Pattern;
 
 public class ComputeActivity extends Activity {
 
+    TextView tvHeight;
+    TextView tvWeight;
+    TextView tvGender;
+    TextView tvBMI;
+    TextView tvFatp;
+    TextView tvFatf;
+
     int height;
     int weight;
     boolean gender;
@@ -31,6 +38,13 @@ public class ComputeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compute);
+
+        tvHeight = (TextView)findViewById(R.id.height);
+        tvWeight = (TextView)findViewById(R.id.weight);
+        tvGender = (TextView)findViewById(R.id.gender);
+        tvBMI = (TextView)findViewById(R.id.bmi);
+        tvFatp = (TextView)findViewById(R.id.fatp);
+        tvFatf = (TextView)findViewById(R.id.fatf);
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -124,19 +138,29 @@ public class ComputeActivity extends Activity {
         double result = 0;
         if(gender)
         {
-            result = 0.485*(height*height/result3)+0.338*weight+23.52;
+            result = 0.485*(height*height/result3)+0.338*weight+6.52;
         }
         else
         {
-            result = 0.475*(height*height/result3)+0.295*weight+5.49;
+            result = 0.475*(height*height/result3)+0.295*weight+6.49;
         }
         double bmi = 0;
-        bmi = weight/((height/100)*(height/100));
+        bmi = weight/(((double)height/100)*((double)height/100));
 
         Log.e("fat free mass", result+"");
         Log.e("bmi", bmi+"");
 
-        tv.setText("1. " + result1 + "\n2. " + result2 + "\n3. " + result3 + "\n4. " + result + "\n5. " + bmi);
+        //tv.setText("1. " + result1 + "\n2. " + result2 + "\n3. " + result3 + "\n4. " + result + "\n5. " + bmi);
+
+        tvHeight.append(height+" cm");
+        tvWeight.append(weight+" kg");
+        if(gender)
+            tvGender.append("Male");
+        else
+            tvGender.append("Female");
+        tvBMI.append(bmi+"");
+        tvFatp.append((100-((result/weight)*100))+"");
+        tvFatf.append(result+ " kg");
     }
 
     @Override

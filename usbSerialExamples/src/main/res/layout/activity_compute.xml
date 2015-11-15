@@ -6,8 +6,61 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="src.com.hoho.android.usbserial.examples.ComputeActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/text"/>
+        android:gravity="center_horizontal"
+        android:text="Stats"
+        android:textSize="20dp"
+        android:id="@+id/stats"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Height: "
+        android:layout_below="@+id/stats"
+        android:textSize="17dp"
+        android:layout_margin="10dp"
+        android:id="@+id/height"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/height"
+        android:id="@+id/weight"
+        android:text="Weight: "
+        android:layout_margin="10dp"
+        android:textSize="17dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weight"
+        android:id="@+id/gender"
+        android:text="Gender: "
+        android:layout_margin="10dp"
+        android:textSize="17dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender"
+        android:id="@+id/bmi"
+        android:text="BMI: "
+        android:layout_margin="10dp"
+        android:textSize="17dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bmi"
+        android:id="@+id/fatp"
+        android:text="Body Fat %: "
+        android:layout_margin="10dp"
+        android:textSize="17dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fatp"
+        android:id="@+id/fatf"
+        android:text="Fat-free Mass: "
+        android:layout_margin="10dp"
+        android:textSize="17dp"/>
 
 </RelativeLayout>

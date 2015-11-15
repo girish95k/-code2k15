@@ -28,7 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/h"
         android:id="@+id/height"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:text="170" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,7 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/w"
         android:id="@+id/weight"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:text="65" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
