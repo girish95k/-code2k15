@@ -1,6 +1,7 @@
 package src.com.hoho.android.usbserial.examples;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,6 +18,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ComputeActivity extends Activity {
+
+    int height;
+    int weight;
+    boolean gender;
+
+    public static final String MY_PREFS_NAME = "MyPrefsFile";
 
     ArrayList<String> dataList;
 
@@ -102,11 +109,34 @@ public class ComputeActivity extends Activity {
         double result3 = result2/(0.8*Math.pow(10, -3));
 
         Log.e("result1", result1+"");
-        Log.e("result2", result2+"");
-        Log.e("result3", result3+"");
+        Log.e("result2", result2 + "");
+        Log.e("result3", result3 + "");
 
         TextView tv = (TextView)findViewById(R.id.text);
-        tv.setText("1. " + result1 + "\n2. " + result2 + "\n3. " + result3);
+
+
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        height = prefs.getInt("height", 0);
+        weight = prefs.getInt("weight", 0);
+        gender = prefs.getBoolean("gender", false);
+
+        //Fat-free mass
+        double result = 0;
+        if(gender)
+        {
+            result = 0.485*(height*height/result3)+0.338*weight+23.52;
+        }
+        else
+        {
+            result = 0.475*(height*height/result3)+0.295*weight+5.49;
+        }
+        double bmi = 0;
+        bmi = weight/((height/100)*(height/100));
+
+        Log.e("fat free mass", result+"");
+        Log.e("bmi", bmi+"");
+
+        tv.setText("1. " + result1 + "\n2. " + result2 + "\n3. " + result3 + "\n4. " + result + "\n5. " + bmi);
     }
 
     @Override
